@@ -1,0 +1,13 @@
+*
+!.gitignore
+
+!*.ipynb
+!*.py
+!*.md
+!*.txt
+
+# Exclude checkpoint folders, datasets, models, results
+.ipynb_checkpoints/
+datasets/
+models/
+results/
