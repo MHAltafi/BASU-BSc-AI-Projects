@@ -6,6 +6,8 @@
 !*.md
 !*.txt
 
+mytests.ipynb
+
 # Exclude checkpoint folders, datasets, models, results
 .ipynb_checkpoints/
 datasets/
