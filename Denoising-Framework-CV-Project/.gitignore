@@ -6,6 +6,9 @@
 !*.md
 !*.txt
 
+!figures/
+!figures/**
+
 mytests.ipynb
 
 # Exclude checkpoint folders, datasets, models, results
