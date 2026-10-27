@@ -6,6 +6,20 @@ This project explores an end-to-end Optical Character Recognition (OCR) pipeline
 
 The project covers synthetic dataset generation, image preprocessing, deep learning model development, training experiments, and OCR evaluation.
 
+![Examples of generated Persian text images](figures/outputs.png)
+
+## Table of Contents
+
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Results](#results)
+- [Limitations and Future Improvements](#limitations-and-future-improvements)
+- [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - Synthetic Persian text image generation using 39 Persian fonts.
@@ -119,6 +133,7 @@ The network uses convolutional layers, batch normalization, residual connections
 | Training batch size | 8 |
 
 These values summarize the documented notebook configuration. Individual experiments may use different settings.
+
 ## Installation
 
 ### Requirements
@@ -139,14 +154,13 @@ The project uses Python and the following libraries. The versions below were cap
 | python-bidi | 0.6.0 |
 | torchmetrics | 1.9.0 |
 | torcheval | 0.0.7 |
-| Jupyter Notebook | (any recent version) |
+| Jupyter Notebook | Any recent version |
 
 > **Note:** PyTorch and torchvision were installed with CUDA 11.8 builds. If you don't have a CUDA 11.8–compatible GPU, install the CPU builds instead — the code still runs on CPU, just more slowly.
 
 ### Setup
 
 This project lives inside a monorepo. You can either download only this folder, or clone the whole repository.
-
 
 After downloading this folder, create a virtual environment:
 

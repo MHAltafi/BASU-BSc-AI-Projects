@@ -7,3 +7,6 @@
 
 !*.md
 !requirements*.txt
+
+!figures/
+!figures/**
