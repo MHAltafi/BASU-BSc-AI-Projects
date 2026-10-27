@@ -1,0 +1,17 @@
+data/
+models_data/
+splits_data/
+results/
+
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+.venv/
+venv/
+.env
