@@ -1,0 +1,225 @@
+# Bachelor's Projects in Artificial Intelligence & Computer Vision
+
+This repository contains a collection of projects, coursework, and practical assignments completed during my Bachelor's studies at **Bu-Ali Sina University (BASU)**.
+
+The work covers topics in **Artificial Intelligence, Computer Vision, Machine Learning, Image Processing, and Data Mining**, ranging from foundational course assignments to more involved projects in image denoising, medical image segmentation, and optical character recognition.
+
+The repository is organized by project and course, with individual README files providing details about each project's objectives, methods, implementation, and results.
+
+## Table of Contents
+
+- [Featured Projects](#featured-projects)
+  - [1. Casting Defect Detection and Adaptive Image Denoising](#1-casting-defect-detection-and-adaptive-image-denoising)
+  - [2. Medical Image Segmentation](#2-medical-image-segmentation)
+  - [3. Persian OCR Using PyTorch](#3-persian-ocr-using-pytorch)
+- [Additional Projects](#additional-projects)
+  - [4. Image Processing Coursework](#4-image-processing-coursework)
+  - [5. ResNet-Based Image Retrieval](#5-resnet-based-image-retrieval)
+  - [6. Data Mining Coursework](#6-data-mining-coursework)
+- [Technologies and Tools](#technologies-and-tools)
+- [Notes](#notes)
+
+---
+
+## Featured Projects
+
+### 1. Casting Defect Detection and Adaptive Image Denoising
+
+**Folder:** [`Denoising-Framework-CV-Project/`](./Denoising-Framework-CV-Project/)
+
+**Course:** Introduction to Computer Vision — Fall 2023
+
+A computer vision project investigating whether adaptive image denoising can improve manufacturing defect detection in submersible pump impellers.
+
+The project develops a three-phase pipeline combining image classification, noise identification, and noise-specific image restoration.
+
+**Key Contributions:**
+- Implemented and compared ResNet and Vision Transformer (ViT) models for defect and noise classification.
+- Developed an adaptive denoising pipeline that identifies image corruption and selects an appropriate restoration method.
+- Applied **BM3D** for Gaussian noise and median filtering for salt-and-pepper noise.
+- Designed and trained a custom **U-Net convolutional autoencoder** for periodic noise removal.
+- Trained a ViT defect classifier on restored images and compared its performance against the baseline model.
+- Conducted supplementary experiments using handcrafted HOG and LBP features with Random Forest and SVM classifiers.
+
+**Selected Results:**
+
+| Restoration Method | PSNR | SSIM |
+|---|---:|---:|
+| BM3D (Gaussian) | 34.24 dB | 0.9120 |
+| Median Filter (Salt-and-Pepper) | 35.17 dB | 0.9511 |
+| U-Net Autoencoder (Periodic) | 26.89 dB | 0.8902 |
+
+The recorded ViT defect classification accuracy increased from **93% on noisy images to 95% on restored images**.
+
+**Technologies:** Python, PyTorch, Torchvision, ResNet, Vision Transformer, U-Net, BM3D, OpenCV, Scikit-learn.
+
+[Explore the project and its detailed documentation →](./Denoising-Framework-CV-Project/)
+
+---
+
+### 2. Medical Image Segmentation
+
+**Folder:** [`UW-Madison-Segmentation/`](./UW-Madison-Segmentation/)
+
+**Spring 2024 — Preliminary work related to my Bachelor's thesis**
+
+A deep learning project exploring multi-class semantic segmentation of gastrointestinal organs in MRI images using the UW-Madison GI Tract Image Segmentation dataset.
+
+Three encoder-decoder architectures were implemented and compared using a shared ResNet34 encoder.
+
+**Key Contributions:**
+- Prepared MRI images and decoded run-length encoded (RLE) segmentation masks.
+- Implemented and compared **U-Net, U-Net++, and DeepLabV3+**.
+- Developed a preprocessing and exploratory data analysis pipeline.
+- Trained the models using PyTorch and Dice Loss.
+- Evaluated segmentation performance using IoU, Dice, F1-score, precision, and recall.
+- Generated visual comparisons of predictions and quantitative evaluation results.
+
+**Target Classes:**
+- Stomach
+- Large Bowel
+- Small Bowel
+
+**Selected Results:**
+
+| Metric | U-Net | U-Net++ | DeepLabV3+ |
+|---|---:|---:|---:|
+| IoU | 0.7280 | **0.7303** | 0.7045 |
+| Dice | **0.8032** | 0.8023 | 0.7827 |
+| F1-score | 0.8014 | **0.8032** | 0.7820 |
+
+U-Net++ achieved the highest overall IoU, while U-Net achieved the highest overall Dice score.
+
+**Technologies:** Python, PyTorch, Torchvision, Segmentation Models PyTorch, ResNet34, OpenCV, NumPy, Scikit-learn.
+
+[Explore the project and its detailed documentation →](./UW-Madison-Segmentation/)
+
+---
+
+### 3. Persian OCR Using PyTorch
+
+**Folder:** [`SimpleOCR/`](./SimpleOCR/)
+
+**Summer Internship — 2024**
+
+An end-to-end deep learning OCR project developed to recognize printed Persian text from images.
+
+The project explores sequence-based text recognition using a custom CNN–BiLSTM architecture trained with Connectionist Temporal Classification (CTC) loss.
+
+A synthetic dataset was generated by rendering the names of Iran's 31 provinces using 39 Persian fonts. Recorded results on the project's evaluation data; these figures should not be interpreted as performance on a general-purpose Persian OCR benchmark.
+
+**Key Contributions:**
+- Generated a synthetic Persian text image dataset using Pillow.
+- Implemented Persian text shaping and right-to-left rendering using `arabic-reshaper` and `python-bidi`.
+- Developed an image preprocessing pipeline including cropping, grayscale conversion, and resizing.
+- Designed a custom CNN with five residual convolutional blocks.
+- Integrated a two-layer bidirectional LSTM for sequential feature modeling.
+- Implemented CTC-based sequence recognition without character-level image segmentation.
+- Evaluated recognition performance using Character Error Rate (CER) and Word Error Rate (WER).
+
+**Recorded Results:**
+
+| Metric | Result |
+|---|---:|
+| Character Error Rate (CER) | 7.97% |
+| Word Error Rate (WER) | 15.99% |
+
+**Technologies:** Python, PyTorch, CNN, BiLSTM, CTC Loss, Pillow, NumPy.
+
+[Explore the project and its detailed documentation →](./SimpleOCR/)
+
+---
+
+## Additional Projects
+
+### 4. Image Processing Coursework
+
+**Folder:** [`Image-Processing-Coursework/`](./Image-Processing-Coursework/)
+
+**Course:** Introduction to Computer Vision — Fall 2023
+
+A collection of four assignments exploring fundamental image processing techniques through practical implementations and experiments.
+
+| Assignment | Topics |
+|---|---|
+| Assignment 1 — Fundamentals of Image Processing | Image interpolation, histogram equalization, contrast enhancement, intensity transformations, and geometric transformations. |
+| Assignment 2 — Image Enhancement and Edge Detection | Spatial filtering, noise reduction, sharpening, Sobel, Laplacian, Roberts, and Prewitt operators. |
+| Assignment 3 — Frequency Domain Processing | Fourier transforms, Butterworth filters, periodic noise removal, image reconstruction, and PSNR evaluation. |
+| Assignment 4 — Image Restoration and Morphology | Image restoration, histogram equalization, morphological operations, blob separation, and object detection and measurement. |
+
+**Technologies:** Python, OpenCV, NumPy, Matplotlib, Pillow, Jupyter Notebook.
+
+[Explore the coursework →](./Image-Processing-Coursework/)
+
+---
+
+### 5. ResNet-Based Image Retrieval
+
+**Folder:** [`Simple-Image-Retrieval/`](./Simple-Image-Retrieval/)
+
+**Course:** Introduction to Information Retrieval — Spring 2024
+
+A practical exercise exploring content-based image retrieval using deep features extracted from a pretrained ResNet-50 model.
+
+Images from the Oxford Buildings dataset are represented as 2048-dimensional feature vectors, which are compared using different distance metrics.
+
+**Key Topics:**
+- Feature extraction using pretrained ResNet-50.
+- Image similarity using Euclidean, cosine, and Manhattan distances.
+- Nearest-neighbor image retrieval.
+- Pairwise distance matrix computation.
+- Two-dimensional visualization using Multidimensional Scaling (MDS).
+- Visual comparison of retrieval results across distance metrics.
+
+**Technologies:** Python, PyTorch, Torchvision, ResNet-50, NumPy, Scikit-learn, Matplotlib.
+
+[Explore the project →](./Simple-Image-Retrieval/)
+
+---
+
+### 6. Data Mining Coursework
+
+**Folder:** [`Data-Mining-Coursework/`](./Data-Mining-Coursework/)
+
+**Course:** Introduction to Data Mining — Fall 2023
+
+A collection of three practical assignments and one educational presentation covering data mining and machine learning algorithms.
+
+| Assignment | Topics |
+|---|---|
+| Anomaly Detection | One-Class SVM, Isolation Forest, Elliptic Envelope, Local Outlier Factor, DBSCAN, and PyOD. Includes an educational presentation and algorithm visualizations. |
+| Association Rule Mining and Decision Trees | Apriori algorithm, frequent itemsets, association rules, data preprocessing, and decision tree classification using Congressional Voting Records. |
+| Centroid-Based Classification from Scratch | NumPy implementation of a nearest-centroid classifier following the Scikit-learn estimator interface, evaluated using the Iris dataset. |
+| Obesity Classification | Exploratory data analysis, categorical encoding, Decision Trees, Random Forests, and classification evaluation. |
+
+**Technologies:** Python, NumPy, Pandas, Scikit-learn, PyOD, Mlxtend, Matplotlib, Seaborn, Jupyter Notebook.
+
+[Explore the coursework →](./Data-Mining-Coursework/)
+
+---
+
+## Technologies and Tools
+
+The projects in this repository cover a range of tools and frameworks across computer vision, deep learning, image processing, and machine learning.
+
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Deep Learning | PyTorch, Torchvision |
+| Computer Vision | OpenCV, Pillow |
+| Neural Network Architectures | CNN, ResNet, Vision Transformer, U-Net, U-Net++, DeepLabV3+, BiLSTM |
+| Image Processing | BM3D, Fourier Transform, Median Filtering, Morphological Operations |
+| Machine Learning | Scikit-learn, Random Forest, SVM, Decision Trees |
+| Data Science | NumPy, Pandas |
+| Visualization | Matplotlib, Seaborn |
+| Experimentation | Jupyter Notebook |
+
+
+## Notes
+
+- Projects are documented individually in their respective folders.
+- Datasets, generated files, trained model checkpoints, and other large artifacts are excluded from version control.
+- Dataset access, dependency requirements, and setup instructions may differ between projects. Refer to the corresponding project README before running its notebooks.
+- Reported metrics represent recorded experimental results and may depend on dataset splits, preprocessing, and training configurations.
+
+---
